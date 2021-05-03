@@ -23,6 +23,7 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
+  - mvn install -Dmaven.test.skip=true
   - docker-compose up
 
 notifications:
