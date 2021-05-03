@@ -23,7 +23,16 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
+  - docker pull openjdk
+
+  - cd credit-history
   - mvn install -Dmaven.test.skip=true
+  - cd ..
+
+  - cd passport-service
+  - mvn install -Dmaven.test.skip=true
+  - cd ..
+
   - docker-compose up -d
 
 notifications:
